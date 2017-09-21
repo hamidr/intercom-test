@@ -1,0 +1,55 @@
+Hi
+
+I have chosen the 4th problem and solved it but as always there were some ambigiuties
+in the description of the problem which I will be addressing here.
+
+#Reason
+
+Why did I choose this problem?
+To warm myself + seemed more fun!
+
+
+# HOWTO build it?
+Right now I only have linux installed on my PC but I assume the source code can also be compiled on 
+Windows as well as macOS and here is how:
+
+```
+$ mkdir build
+$ cd build
+#You have cmake installed. Right?
+$ cmake ..
+$ make
+$ make tests; ./tests #run test
+
+#Run it :) (Your own example)
+$ ./ableton.out <<EOF
+module alpha reverse
+module beta delay
+connect alpha beta
+process hello world
+EOF
+
+#hello olleh dlrow
+
+```
+
+The source code is designed to be TDD/BDD friendly but needed more input/output on this matter though the service
+works perfectly with current assumptions.
+Also error handling is covered pretty nicely.
+1. Running process without declaring any module.
+2. Connecting to an unidentified module
+3. Connection a module to itself
+4. Trying to cause a recursive connection
+5. Declaring a module with unknow type
+and etc.
+
+
+Ambigiuties:
+
+1. I assumed When declaring the modules first module is always the processor starter.
+2. Where there is no "connect" command to chain the processing then only those which are connected to the 
+first module will react in a chain call.
+3. Assumed in "process REST_OF_LINE" the $REST_OF_LINE is an argument instead of applying the "processing" 
+on each phase separately on space separated words.
+If this was not the case I believe "hello olleh hello dlrow" would have been the result so I stand corrected.
+4. The term "strings"  was misleading as well as "summing" because of few examples.

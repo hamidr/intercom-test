@@ -1,0 +1,10 @@
+Run the server with:
+	export SERVER_PUBLIC_INTERFACE_IP=0.0.0.0 # assuming it is 192.168.0.10
+	export SERVER_PUBLIC_PORT=9090
+	cargo run server $SERVER_PUBLIC_INTERFACE_IP:$SERVER_PUBLIC_PORT
+
+Run the client from another PC:
+
+	cargo run client 192.168.0.10:9090
+# on local
+#	cargo run client 127.0.0.1:9090
