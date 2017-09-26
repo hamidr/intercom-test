@@ -1,0 +1,1 @@
+/usr/bin/c++    -g    -g -rdynamic CMakeFiles/tests.dir/tests/main_test.cpp.o  -o tests  -L/usr/local/lib -Wl,-rpath,/usr/local/lib 

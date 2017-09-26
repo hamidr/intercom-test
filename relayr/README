@@ -1,0 +1,14 @@
+The usage:
+
+```
+int main() {
+CircularBuffer<uint32_t, 10> buffer; //in the stack
+
+```
+
+The complete usage is of course located in the tests directory.
+
+Run the tests:
+```
+$ mkdir build; cd build; cmake ..; make; ./tests
+```
